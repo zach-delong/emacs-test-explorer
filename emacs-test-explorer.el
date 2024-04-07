@@ -1,9 +1,20 @@
+(defun is-valid-status (status)
+  "Ensures that the provided symbol is a valid status"
+  (unless (symbolp status)
+    nil)
+  (if
+      (or
+       (eq status 'Y)
+       (eq status 'N)
+       (eq status 'U))
+      status))
 
 ;; TODO: this should validate its inputs to make sure things make sense.
 (defun create-explorer-entry (status description)
   "Create a new entry for the test explorer"
-  ;; TODO: passing an invalid status should throw an error
   ;; TODO: passing nil description shouldn't work
+  (unless (is-valid-status status)
+    (error "%s is not a valid status ('Y, 'N, or 'U)" status))
   (list status description))
 
 (defun get-status-from-entry (entry)

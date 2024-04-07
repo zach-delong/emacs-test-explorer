@@ -53,3 +53,11 @@
 *** TODO Create some customization options for how to display tests.
 
     This is Emacs after all... Others might not like the test explorer along the bottom panel.
+
+* Working in this repository
+
+  I am writing tests as I go. The structure is more or less mimicking [[https://scripter.co/quick-intro-to-emacs-lisp-regression-testing/#][this]]. As such, there is a makefile. If you have ~make~ installed, you can run ~make test~ and it should run all the tests.
+
+  To contribute new tests, create a new file named for the feature you are testing. Inside that file, ~(require 'emacs-test-explorer)~ and then use ~ERT~ to write tests.
+
+  Once your test is sketched out, ~(provide 'description-of-the-feature-being-tested)~ and then ~(require 'description-of-the-feature-being-tested~ in ~all-tests.el~. This will cause the ~make test~ to "see" your new tests on the suite.

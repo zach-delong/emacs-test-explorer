@@ -1,4 +1,4 @@
-(defun is-valid-status (status)
+(defun statusp (status)
   "Ensures that the provided symbol is a valid status"
   (unless (symbolp status)
     nil)
@@ -13,7 +13,7 @@
 (defun create-explorer-entry (status description)
   "Create a new entry for the test explorer"
   ;; TODO: passing nil description shouldn't work
-  (unless (is-valid-status status)
+  (unless (statusp status)
     (error "%s is not a valid status ('Y, 'N, or 'U)" status))
   (list status description))
 

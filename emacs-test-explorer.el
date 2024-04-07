@@ -1,6 +1,9 @@
 
+;; TODO: this should validate its inputs to make sure things make sense.
 (defun create-explorer-entry (status description)
   "Create a new entry for the test explorer"
+  ;; TODO: passing an invalid status should throw an error
+  ;; TODO: passing nil description shouldn't work
   (list status description))
 
 (defun get-status-from-entry (entry)

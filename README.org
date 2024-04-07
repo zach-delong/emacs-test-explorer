@@ -1,0 +1,55 @@
+* Emacs-test-explorer.el
+
+  This package aims to be a universal test explorer for running tests in Emacs. The goal is to create
+
+  + An interface for browsing tests
+  + A simple API for providing "test discoverers" that can provide the list of tests to the interface for browsing tests
+  + A simple interface for running specific tests from your code base
+
+  
+* Why?
+
+  Running test via the CLI is great, everyone should do it. That said, filtering tests from the CLI can be cumbersome, and UI can help with that a lot. That is the goal of this plugin
+
+  
+* How?
+
+  This package aims to standardize some kind of UI and API for displaying tests to a programmer. It can then delegate the responsibility for actually discovering those test to purpose-built packages for doing that exploration, possibly via LSP.
+
+  
+* Status
+
+  This package is nowhere near completion.
+
+  
+** Current goals
+
+   
+*** TODO Standardize data structure for representing tests
+
+    This should be fairly easy. Any test explorer needs to report:
+
+    + The status of a test (Unknown/not run, passed, failed)
+    + A description of the test (usually a name of some sort)
+    + Information about any children tests 
+
+*** TODO Create treemacs-like UI panel for exploring tests
+
+    + Treemacs is just the only example I can think of off hand.
+    + such a panel, instead of being on the left hand side, should be along the bottom to allow for long descriptions (and possibly future things!)
+
+*** TODO Create text-based UI for viewing the tests in a project
+
+    Nothing fancy, I just need to be able to see the tests.
+
+*** TODO Create separate package for listing tests run under vitest.
+    
+    I have been working on Vue, so naturally that's where my head goes first.
+
+*** TODO Create fancier image-based UI for displaying tests.
+
+    All hail the jpg
+
+*** TODO Create some customization options for how to display tests.
+
+    This is Emacs after all... Others might not like the test explorer along the bottom panel.

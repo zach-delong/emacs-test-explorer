@@ -12,9 +12,13 @@
 ;; TODO: this should validate its inputs to make sure things make sense.
 (defun create-explorer-entry (status description)
   "Create a new entry for the test explorer"
-  ;; TODO: passing nil description shouldn't work
+
   (unless (statusp status)
     (error "%s is not a valid status ('Y, 'N, or 'U)" status))
+
+  (unless (stringp description)
+    (error "Must enter a nonempty and non-nill string for a description"))
+
   (list status description))
 
 (defun get-status-from-entry (entry)

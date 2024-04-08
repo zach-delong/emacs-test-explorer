@@ -10,6 +10,6 @@
 (ert-deftest crate-explorer-entry-description ()
   "Ensure the description loads correctly"
   (should (equal "Description" (car (nthcdr 1 (create-explorer-entry 'Y "Description")))))
-  (should (equal () (car (nthcdr 1 (create-explorer-entry 'Y ()))))))
+  (should-error (car (nthcdr 1 (create-explorer-entry 'Y ())))))
 
 (provide 'create-entry)
